@@ -1,0 +1,118 @@
+{
+  "npmScope": "ngx-bootstrap-base",
+  "affected": {
+    "defaultBase": "development"
+  },
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.base.json": "*",
+    "tslint.json": "*",
+    ".eslintrc.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "cloud": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "test",
+          "lint",
+          "e2e"
+        ],
+        "canTrackAnalytics": false,
+        "showUsageWarnings": true
+      }
+    },
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "ngx-bootstrap-docs": {
+      "tags": [],
+      "implicitDependencies": [
+        "ngx-bootstrap"
+      ]
+    },
+    "ngx-bootstrap": {
+      "tags": [],
+      "implicitDependencies": [
+        "chronos",
+        "datepicker",
+        "locale"
+      ]
+    },
+    "chronos": {
+      "tags": [
+        "lib"
+      ]
+    },
+    "component-loader": {
+      "tags": [
+        "lib"
+      ],
+      "implicitDependencies": [
+        "utils",
+        "positioning"
+      ]
+    },
+    "datepicker": {
+      "tags": [
+        "lib"
+      ],
+      "implicitDependencies": [
+        "mini-ngrx",
+        "chronos",
+        "tooltip"
+      ]
+    },
+    "locale": {
+      "tags": [
+        "lib"
+      ],
+      "implicitDependencies": [
+        "chronos"
+      ]
+    },
+    "mini-ngrx": {
+      "tags": [
+        "lib"
+      ]
+    },
+    "utils": {
+      "tags": [
+        "lib"
+      ]
+    },
+    "positioning": {
+      "tags": [
+        "lib"
+      ],
+      "implicitDependencies": [
+        "utils"
+      ]
+    },
+    "tooltip": {
+      "tags": [
+        "lib"
+      ],
+      "implicitDependencies": [
+        "positioning",
+        "component-loader"
+      ]
+    }
+  }
+}
